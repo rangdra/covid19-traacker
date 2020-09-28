@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <title>Landing Covid19</title>
+  </head>
+  <body>
+    <div id="overlay" class="overlay"></div>
+    <div id="bar" class="bar">
+      <div class="d-flex justify-content-between align-content-center">
+        <div class="d-flex align-content-center">
+          <img
+            src="./assets/shield.png"
+            width="20"
+            height="25"
+            class="d-inline-block align-top mr-3"
+            alt=""
+            loading="lazy"
+          />
+
+          <h6>Covid19 <span>Tracker</span></h6>
+        </div>
+        <img id="toggle-close" src="./assets/toggle-close.svg" alt="" />
+      </div>
+      <hr />
+      <h7 class="d-block mt-2">Overview</h7>
+      <h7 class="d-block mt-2">News</h7>
+      <h7 class="d-block mt-2">Country</h7>
+      <h7 class="d-block mt-2">City</h7>
+      <h7 class="d-block mt-2">Top Effected</h7>
+    </div>
+
+    <img src="./assets/bg.png" class="shape" />
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <a
+          class="navbar-brand"
+          data-aos="fade-down"
+          data-aos-duration="500"
+          href="#"
+        >
+          <img
+            src="./assets/shield.png"
+            width="30"
+            height="40"
+            class="d-inline-block align-top mr-3"
+            alt=""
+            loading="lazy"
+          />
+
+          <h1>Covid19 <span>Tracker</span></h1>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <img id="toggle" src="./assets/toggle.png" alt="" />
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li
+              class="nav-item active"
+              data-aos="fade-down"
+              data-aos-duration="500"
+            >
+              <a class="nav-link" href="#"
+                >Overview <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item" data-aos="fade-down" data-aos-duration="600">
+              <a class="nav-link" href="#">News</a>
+            </li>
+            <li class="nav-item" data-aos="fade-down" data-aos-duration="700">
+              <a class="nav-link" href="#">Country</a>
+            </li>
+            <li class="nav-item" data-aos="fade-down" data-aos-duration="800">
+              <a class="nav-link">City</a>
+            </li>
+            <li class="nav-item" data-aos="fade-down" data-aos-duration="900">
+              <a class="nav-link">Top Effected</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="row mt-3">
+        <div
+          class="col-lg-4 col-12"
+          data-aos="fade-right"
+          data-aos-duration="500"
+        >
+          <img src="./assets/people.png" class="img-people" />
+        </div>
+        <div
+          class="col-lg-8 col-12"
+          data-aos="fade-left"
+          data-aos-duration="500"
+        >
+          <div class="row wrap-card"></div>
+        </div>
+      </div>
+
+      <div
+        class="row w-50 wrap-carousel"
+        data-aos="fade-up"
+        data-aos-duration="500"
+      >
+        <h4 class="text-news" data-aos="fade-up" data-aos-duration="1000">
+          News Covid19
+        </h4>
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-ride="carousel"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >
+          <img src="./assets/5.png" alt="" class="shape-carousel" />
+          <ol class="carousel-indicators">
+            <li
+              data-target="#carouselExampleIndicators"
+              data-slide-to="0"
+              class="active"
+            ></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h5>Berita Corona</h5>
+              <h5>Pesat</h5>
+              <p>19 September 2020</p>
+              <!-- <img src="..." class="d-block w-100" alt="..." /> -->
+            </div>
+            <div class="carousel-item">
+              <h5>Berita Corona</h5>
+              <h5>Pesat</h5>
+              <p>19 September 2020</p>
+              <!-- <img src="..." class="d-block w-100" alt="..." /> -->
+            </div>
+            <div class="carousel-item">
+              <h5>Berita Corona</h5>
+              <h5>Pesat</h5>
+              <p>19 September 2020</p>
+              <!-- <img src="..." class="d-block w-100" alt="..." /> -->
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="prev"
+          >
+            <img src="./assets/previus.png" alt="" />
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="next"
+          >
+            <img src="./assets/next.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./index.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

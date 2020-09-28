@@ -1,0 +1,269 @@
+body {
+  height: 100vh;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  background-color: #000000c4;
+  width: 100%;
+  z-index: 999;
+  height: 100vh;
+  visibility: hidden;
+}
+.bar {
+  position: absolute;
+  z-index: 9999;
+  background-color: white;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  visibility: hidden;
+  cursor: pointer;
+}
+.bar h6 {
+  color: #645beb;
+  font-weight: 100;
+}
+.bar h6 span {
+  font-weight: 500;
+}
+.bar h7 {
+  font-weight: 200;
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand h1 {
+  color: #645beb;
+  font-weight: 100;
+}
+.navbar-brand h1 span {
+  font-weight: 500;
+}
+
+.nav-link {
+  color: #ffffff !important;
+  font-size: 22px;
+  margin-right: 20px;
+}
+.navbar img {
+  cursor: pointer;
+}
+
+.shape {
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  width: 55%;
+}
+
+.img-people {
+  height: 270px;
+  width: 350;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+.card {
+  padding: 20px 20px 35px 20px;
+  border-radius: 12px;
+  color: #ffffff;
+  position: relative;
+}
+.card h3,
+p {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.wrap-card {
+  background-color: #ffffff3d;
+  padding: 0 20px 35px 20px;
+  border-radius: 12px;
+  margin-right: 35px;
+}
+
+.bg-card1 {
+  background: transparent linear-gradient(180deg, #ff8900 0%, #ff5800 100%) 0%
+    0% no-repeat padding-box;
+}
+.bg-card2 {
+  background: transparent linear-gradient(180deg, #03e2a5 0%, #00b188 100%) 0%
+    0% no-repeat padding-box;
+}
+.bg-card3 {
+  background: transparent linear-gradient(180deg, #6e8aff 0%, #6c63ff 100%) 0%
+    0% no-repeat padding-box;
+}
+.bg-card4 {
+  background: transparent linear-gradient(180deg, #e98bff 0%, #b100b1 100%) 0%
+    0% no-repeat padding-box;
+}
+
+.shape-card {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.shape-hr {
+  width: 40px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 8px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.carousel {
+  width: 100%;
+  background: linear-gradient(
+    184deg,
+    rgba(116, 108, 255, 1) 0%,
+    rgba(152, 94, 230, 1) 100%
+  );
+  border-radius: 12px;
+  position: relative;
+  padding: 8px 16px;
+}
+.carousel-inner {
+  padding-left: 80px;
+}
+
+.shape-carousel {
+  position: absolute;
+  right: 2px;
+  height: 101px;
+  width: 50%;
+  top: 2px;
+}
+
+.carousel-item {
+  color: white;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: -50px;
+}
+
+.carousel-indicators li {
+  height: 10px;
+  background-color: #c4c4c4;
+}
+
+.carousel-indicators li.active {
+  background-color: #746cff;
+  width: 50px;
+}
+
+.wrap-carousel {
+  position: relative;
+}
+
+.text-news {
+  position: absolute;
+  top: -40px;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+  .nav-link {
+    font-size: 15px;
+    margin-right: 10px;
+  }
+  .navbar-brand h1 {
+    font-size: 25px;
+  }
+  .navbar-brand img {
+    width: 20px;
+    height: 25px;
+    margin-right: 10px !important;
+  }
+  .text-news {
+    font-size: 17px;
+  }
+  .carousel-item h5 {
+    font-size: 14px;
+  }
+  .carousel-item p {
+    font-size: 12px;
+  }
+  .shape-carousel {
+    height: 80px;
+  }
+}
+
+@media (max-width: 992px) {
+  .img-people {
+    display: none;
+  }
+  .navbar-toggler {
+    display: none;
+  }
+  .wrap-card {
+    background-color: transparent;
+    position: absolute;
+    top: 150px;
+    margin-right: 0;
+  }
+  .wrap-carousel {
+    width: 100% !important;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 40px;
+  }
+
+  .shape {
+    width: 50%;
+    height: 243px;
+  }
+  .carousel-indicators {
+    right: 120px;
+  }
+  .navbar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .padding-cs {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .wrap-card .mt-4:first-child {
+    margin-top: 25px !important;
+  }
+  .wrap-card .mt-4 {
+    margin-top: 10px !important;
+  }
+}
+
+@media (max-width: 337px) {
+  .wrap-card .mt-4:first-child {
+    margin-top: 35px !important;
+  }
+  .card {
+    padding: 20px;
+  }
+  .shape-card {
+    width: 140px;
+    height: 80px;
+  }
+  .shape {
+    height: 260px;
+  }
+  .carousel-inner {
+    padding-left: 50px;
+  }
+}
+
+@media (max-width: 429px) {
+  .navbar-brand h1 {
+    font-size: 20px;
+  }
+}
