@@ -35,9 +35,16 @@ async function showData() {
   }
 }
 
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+}
+
 showData();
 
 function showCards(data) {
+  const positif = numberWithCommas(data.jumlahKasus);
+  const sehat = numberWithCommas(data.sembuh);
+  const death = numberWithCommas(data.meninggal);
   return `<div class="col-12 col-lg-6 mt-4 padding-cs">
               <div
                 class="card bg-card1"
@@ -47,8 +54,8 @@ function showCards(data) {
                 <img src="./assets/1.png" alt="" class="shape-card" />
                 <div class="shape-hr"></div>
                 <h3>Indonesia</h3>
-                <p>${data.jumlahKasus} Positif, ${data.sembuh}</p>
-                <p>Sembuh, ${data.meninggal} Meninggal</p>
+                <p>${positif} Positif, ${sehat}</p>
+                <p>Sembuh, ${death} Meninggal</p>
               </div>
             </div>
             <div
@@ -60,7 +67,7 @@ function showCards(data) {
                 <img src="./assets/2.png" alt="" class="shape-card" />
                 <div class="shape-hr"></div>
                 <h3>Total Positif</h3>
-                <p>${data.jumlahKasus}</p>
+                <p>${positif}</p>
                 <p>Orang</p>
               </div>
             </div>
@@ -73,7 +80,7 @@ function showCards(data) {
                 <img src="./assets/3.png" alt="" class="shape-card" />
                 <div class="shape-hr"></div>
                 <h3>Total Sembuh</h3>
-                <p>${data.sembuh}</p>
+                <p>${sehat}</p>
                 <p>Orang</p>
               </div>
             </div>
@@ -86,12 +93,8 @@ function showCards(data) {
                 <img src="./assets/4.png" alt="" class="shape-card" />
                 <div class="shape-hr"></div>
                 <h3>Total Meninggal</h3>
-                <p>${data.meninggal}</p>
+                <p>${death}</p>
                 <p>Orang</p>
               </div>
             </div>`;
-}
-
-function showNews(data) {
-  return ``;
 }
