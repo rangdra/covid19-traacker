@@ -13,23 +13,22 @@ toggleClose.addEventListener("click", function () {
 });
 
 function getDataCovid() {
-  return fetch("https://indonesia-covid-19.mathdro.id/api").then((response) =>
+  return fetch("https://covid19.mathdro.id/api").then((response) =>
     response.json()
   );
 }
 
-function getDataNews() {
-  return fetch(
-    "https://newsapi.org/v2/top-headlines?country=us&apiKey=2d74b5a158c34a9993bc7b45c417ac16"
-  ).then((response) => response.json());
-}
 async function showData() {
   try {
-    const data = await getDataCovid();
-    const dataNews = await getDataNews();
-    console.log(dataNews);
+    const res1 = await fetch("https://covid19.mathdro.id/api");
+    const data = await res1.json();
+    const res = await fetch(
+      "https://covid19.mathdro.id/api/countries/Indonesia"
+    );
+    const dataIndo = await res.json();
     const wrapCard = document.querySelector(".wrap-card");
-    wrapCard.innerHTML = showCards(data);
+
+    wrapCard.innerHTML = await showCards(data, dataIndo);
   } catch (error) {
     console.log(error);
   }
@@ -41,10 +40,14 @@ function numberWithCommas(x) {
 
 showData();
 
-function showCards(data) {
-  const positif = numberWithCommas(data.jumlahKasus);
-  const sehat = numberWithCommas(data.sembuh);
-  const death = numberWithCommas(data.meninggal);
+async function showCards(data, dataIndo) {
+  const confirmedIndo = numberWithCommas(dataIndo?.confirmed?.value);
+  const recoveredIndo = numberWithCommas(dataIndo?.recovered?.value);
+  const deathsIndo = numberWithCommas(dataIndo?.deaths?.value);
+
+  const confirmed = numberWithCommas(data?.confirmed?.value);
+  const recovered = numberWithCommas(data?.recovered?.value);
+  const deaths = numberWithCommas(data?.deaths?.value);
   return `<div class="col-12 col-lg-6 mt-4 padding-cs">
               <div
                 class="card bg-card1"
@@ -54,8 +57,8 @@ function showCards(data) {
                 <img src="./assets/1.png" alt="" class="shape-card" />
                 <div class="shape-hr"></div>
                 <h3>Indonesia</h3>
-                <p>${positif} Positif, ${sehat}</p>
-                <p>Sembuh, ${death} Meninggal</p>
+                <p>${confirmedIndo} Positif, ${recoveredIndo}</p>
+                <p>Sembuh, ${deathsIndo} Meninggal</p>
               </div>
             </div>
             <div
@@ -67,7 +70,7 @@ function showCards(data) {
                 <img src="./assets/2.png" alt="" class="shape-card" />
                 <div class="shape-hr"></div>
                 <h3>Total Positif</h3>
-                <p>${positif}</p>
+                <p>${confirmed}</p>
                 <p>Orang</p>
               </div>
             </div>
@@ -80,7 +83,7 @@ function showCards(data) {
                 <img src="./assets/3.png" alt="" class="shape-card" />
                 <div class="shape-hr"></div>
                 <h3>Total Sembuh</h3>
-                <p>${sehat}</p>
+                <p>${recovered}</p>
                 <p>Orang</p>
               </div>
             </div>
@@ -93,8 +96,57 @@ function showCards(data) {
                 <img src="./assets/4.png" alt="" class="shape-card" />
                 <div class="shape-hr"></div>
                 <h3>Total Meninggal</h3>
-                <p>${death}</p>
+                <p>${deaths}</p>
                 <p>Orang</p>
               </div>
             </div>`;
+}
+
+function showNews(data) {
+  return ` <img src="./assets/5.png" alt="" class="shape-carousel" />
+          <ol class="carousel-indicators">
+            <li
+              data-target="#carouselExampleIndicators"
+              data-slide-to="0"
+              class="active"
+            ></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h5>Berita Corona</h5>
+              <h5>Pesat</h5>
+              <p>19 September 2020</p>
+              <!-- <img src="..." class="d-block w-100" alt="..." /> -->
+            </div>
+            <div class="carousel-item">
+              <h5>Berita Corona</h5>
+              <h5>Pesat</h5>
+              <p>19 September 2020</p>
+              <!-- <img src="..." class="d-block w-100" alt="..." /> -->
+            </div>
+            <div class="carousel-item">
+              <h5>Berita Corona</h5>
+              <h5>Pesat</h5>
+              <p>19 September 2020</p>
+              <!-- <img src="..." class="d-block w-100" alt="..." /> -->
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="prev"
+          >
+            <img src="./assets/previus.png" alt="" />
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="next"
+          >
+            <img src="./assets/next.png" alt="" />
+          </a>`;
 }
